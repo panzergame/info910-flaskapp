@@ -1,0 +1,20 @@
+n:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: panzergame/info910-flaskapp
+          tag_with_ref: true

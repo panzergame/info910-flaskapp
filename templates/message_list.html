@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<ul>
+{% for message in messages %}
+	<li>{{ message.content }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

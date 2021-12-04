@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: panzergame/info910-flaskapp:latest
+          tags: ghcr.io/panzergame/info910-flaskapp/flaskapp:latest
